@@ -9,7 +9,7 @@ module ActiveRecord
         conditions = build_conditions(id)
         returns = build_returns(counters)
 
-        (<<~SQL)
+        (<<-SQL)
           UPDATE #{@klass.connection.quote_table_name(@klass.table_name)}
           SET
             #{updates}
